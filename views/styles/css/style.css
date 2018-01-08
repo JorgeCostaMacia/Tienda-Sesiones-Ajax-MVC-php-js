@@ -1,0 +1,10 @@
+body{
+  padding: 15px;
+}
+
+.footer-bottom {
+	background: #e7e7e7;
+	border-top: 1px solid #DDDDDD;
+	padding-top: 10px;
+	padding-bottom: 5px;
+}

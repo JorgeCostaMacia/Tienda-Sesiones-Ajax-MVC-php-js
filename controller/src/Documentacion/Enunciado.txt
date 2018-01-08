@@ -1,0 +1,52 @@
+Carro de la compra con las siguientes caracter�sticas: 
+
+Usar la base de datos ProveedoresCarrito (la misma que proveedores, pero con las entidades usuarios y un carritos no procesados).
+Adem�s, en pieza, a�adiremos un campo ruta_imagen, donde estar� almacenada las im�genes de las distintas piezas.
+
+Logueo con usuario y contrase�a
+
+Control de logueo mediante sesiones
+
+Clases Carrito y Pieza.
+
+La definici�n de las clase deber� poseer todos los m�todos m�gicos utilizados:constructor, tostring y clonado, este �ltimo s�lo si hay que redefinirlo.
+
+Buscador de art�culos: Por nombre, n�mero y el precio.
+
+A�adir Articulo al carrito. (Control de todos los posibles errores)
+
+Ver Carrito.
+
+Dentro de ver carrito posibilidad de:
+
+Borrar una pieza de carrito.
+
+Modificar la cantidad de pieza del carrito.
+
+Procesar Carrito: Usando base de datos almacenar la informaci�n del carrito en pedido y l�nea de pedidos en ese vendedor. Ten en cuenta que los carritos se transforman y se almacenan en pedido->l�neas de pedidos.
+
+Posibilidad de almacenar el �ltimo carrito sin procesar de dicho usuario para poder usarlo posteriormente. Ejemplo: Me dejo a medio un carrito, lo almaceno (pero no es un pedido) y lo puedo usar posteriormente. Evidentemente la pr�xima vez que entre, deber� cargarlo autom�ticamente.
+
+Vaciar Carrito
+
+Ver Pedidos: Buscador de pedidos del vendedor logueado por:
+
+Busqueda por Numpedido
+
+Busqueda por Fecha
+
+Busqueda por numpieza
+
+Busqueda nompieza y cantidad
+
+Una vez buscado, debemos poder eliminar el pedido
+
+Logout.php
+
+
+
+Condiciones:
+
+OBLIGATORIO:Utilizar transacciones en aquellos lugares donde se produzcan multiples modificaciones/inserciones/borrados de datos.
+
+OBLIGATORIO: Usar consultas preparadas en la pantalla de logueo y en el proceso de Procesar Carrito.
