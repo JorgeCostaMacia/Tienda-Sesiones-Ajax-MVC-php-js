@@ -68,16 +68,13 @@ class Usuario {
         $_connection = new DBusser("proveedoresCarrito");
         $_querys = [];
         $fechaActual = date('Y-m-d H:i:s');
-
-        $idMaxLinped = 0;
-        $idMaxLinpedConsullt = $_connection->format_select($_connection->_select('MAX(numLinea)', 'linPed'));
-        if($idMaxLinpedConsullt[0]["MAX(numLinea)"] != null){ $idMaxLinped = $idMaxLinpedConsullt[0]["MAX(numLinea)"]; }
-
+        
         $_querys[0] = 'INSERT INTO pedidos(nomUsser, fecha) VALUES (' . '"' . $this->nomUsser .  '"' . ',"' . $fechaActual . '")';
+        $idLinped = 0;
 
         foreach($this->carrito as $producto){
-            $idMaxLinped++;
-            $_querys[] = 'INSERT INTO linPed VALUES(' . $idMaxLinped . ',(SELECT numPedido FROM pedidos WHERE fecha="' . $fechaActual . '"),"' . $producto->getRefPieza()  . '",(SELECT precioVent FROM piezas WHERE refPieza="' . $producto->getRefPieza() .'"),' . $producto->getCantidad() . ')';
+            $idLinped++;
+            $_querys[] = 'INSERT INTO linPed VALUES(' . $idLinped . ',(SELECT numPedido FROM pedidos WHERE fecha="' . $fechaActual . '"),"' . $producto->getRefPieza()  . '",(SELECT precioVent FROM piezas WHERE refPieza="' . $producto->getRefPieza() .'"),' . $producto->getCantidad() . ')';
         }
         return $_connection->_transaction($_querys);
     }
